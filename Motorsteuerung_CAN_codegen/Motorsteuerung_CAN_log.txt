@@ -1,0 +1,136 @@
+- 05 (can): CAN B implicitly created.
+- No (perfectly) suitable triggering block found. Attempt creating implicit timer.
+- 10 (timer): CPUTIMER0 implicitly created.
+- 10 (timer): Offered trigger generator at 1000.000000 Hz
+- Retaining new implicit timer (Ferror=0.000000e+00).
+- 11 (tasktrigger): Task trigger sample time for tasktrigger (11) propagated to: 0.001000.
+- 02 (extmode): Configuring external mode over UART.
+- 02 (extmode): Allocating 2040 bytes for external mode buffer.
+- 05 (can): CAN settings: {
+  ["sample"] = 0.6,
+  ["baud"] = 250000.0,
+  ["tq"] = 4e-06,
+}
+
+Block coding complete.
+
+Blocks in model: {
+  ["dout"] = {
+    [1] = {
+      ["gpio"] = {
+        [0] = 34.0,
+      },
+      ["out_type"] = "pp",
+    },
+  },
+  ["clock"] = {
+    [1] = {
+    },
+  },
+  ["can_receive"] = {
+    [1] = {
+      ["mbox"] = 0,
+      ["can_obj"] = {
+        ["baud"] = 250000.0,
+        ["sjw"] = 4,
+        ["pinset"] = 10,
+        ["brp"] = 76,
+        ["auto_buson"] = "true",
+        ["tseg2"] = 4,
+        ["sample_point"] = 0.6,
+        ["mailboxes"] = {
+          [1] = {
+            ["is_tx"] = "false",
+            ["can_id"] = 3.0,
+            ["ext_id"] = "false",
+            ["width"] = 8.0,
+          },
+          [2] = {
+            ["is_tx"] = "true",
+            ["can_id"] = 1,
+            ["ext_id"] = "false",
+            ["width"] = 7,
+          },
+          [0] = {
+            ["is_tx"] = "false",
+            ["can_id"] = 2.0,
+            ["ext_id"] = "false",
+            ["width"] = 8.0,
+          },
+        },
+        ["gpio"] = {
+          [1] = 17.0,
+          [2] = 12.0,
+        },
+        ["clk"] = 190000000.0,
+        ["is_configured"] = "true",
+        ["can"] = 1.0,
+        ["tseg1"] = 5,
+        ["can_letter"] = "B",
+        ["num_mailboxes"] = 3,
+        ["timing"] = {
+          ["sample"] = 0.6,
+          ["baud"] = 250000.0,
+          ["tq"] = 4e-06,
+        },
+      },
+      ["can_instance"] = 0,
+      ["can"] = 1.0,
+    },
+    [2] = {
+      ["mbox"] = 1,
+      ["can_obj"] = <cyclic reference>,
+      ["can_instance"] = 0,
+      ["can"] = 1.0,
+    },
+  },
+  ["can_transmit"] = {
+    [1] = {
+      ["canId"] = 1,
+      ["can_obj"] = <cyclic reference>,
+      ["width"] = 7,
+      ["can"] = 1.0,
+      ["mbox"] = 2,
+      ["extId"] = "false",
+      ["can_instance"] = 0,
+    },
+  },
+  ["tasktrigger"] = {
+    [1] = {
+      ["ts"] = 0.001,
+      ["trig_base_task_exp"] = "{modtrig = {bid = 10}}",
+    },
+  },
+  ["timer"] = {
+    [1] = {
+      ["modtrig"] = {
+        [1] = <cyclic reference>,
+      },
+      ["unit"] = 0,
+      ["frequency"] = 1000.0,
+      ["period"] = 47500,
+    },
+  },
+  ["can"] = {
+    [1] = <cyclic reference>,
+  },
+  ["extmode"] = {
+    [1] = {
+    },
+  },
+  ["tripzones"] = {
+    [1] = {
+    },
+  },
+  ["can_port"] = {
+    [1] = {
+      ["can_instance"] = 0,
+      ["can_letter"] = "B",
+      ["can_obj"] = <cyclic reference>,
+      ["can"] = 1.0,
+    },
+  },
+}
+
+
+Target settings: "Target: 00000213C26D6498"
